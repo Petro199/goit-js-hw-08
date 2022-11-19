@@ -20,10 +20,14 @@ const onContactFormElInput = (event) => {
   localStorage.setItem('feedback-form-state', JSON.stringify(userInput));
   console.log(localStorage);
 }
-const clearForm = event => { 
+const clearForm = event => {
+  console.log(userInput);
+  // console.log(emailEl.value);
+  // console.log(massageEL.value );
     event.preventDefault();
    event.currentTarget.reset();
-  localStorage.removeItem('feedback-form-state');    
+  localStorage.removeItem('feedback-form-state');
+  
 }
 contactFormEl.addEventListener('input', throttle(onContactFormElInput, 500));
 contactFormEl.addEventListener('submit', clearForm);
